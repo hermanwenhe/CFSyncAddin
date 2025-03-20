@@ -1,4 +1,4 @@
-﻿/* global clearInterval, console, setInterval */
+﻿/* global clearInterval, console, setInterval, Excel */
 
 /**
  * Add two numbers
@@ -12,55 +12,38 @@ export function add(first, second) {
 }
 
 /**
- * Displays the current time once a second
  * @customfunction
- * @param {CustomFunctions.StreamingInvocation<string>} invocation Custom function invocation
- */
-export function clock(invocation) {
-  const timer = setInterval(() => {
-    const time = currentTime();
-    invocation.setResult(time);
-  }, 1000);
-
-  invocation.onCanceled = () => {
-    clearInterval(timer);
-  };
+ * @param {string} address The address of the cell from which to retrieve the value.
+ * @returns The value of the cell at the input address.
+ **/
+export async function getRange(address) {
+  // Retrieve the context object. 
+  const context = new Excel.RequestContext();
+  
+  // Use the context object to access the cell at the input address. 
+  const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+  range.load("values");
+  await context.sync();
+  
+  // Return the value of the cell at the input address.
+  return range.values[0][0];
 }
 
-/**
- * Returns the current time
- * @returns {string} String with the current time formatted for the current locale.
- */
-export function currentTime() {
-  return new Date().toLocaleTimeString();
-}
 
 /**
- * Increments a value once a second.
  * @customfunction
- * @param {number} incrementBy Amount to increment
- * @param {CustomFunctions.StreamingInvocation<number>} invocation
- */
-export function increment(incrementBy, invocation) {
-  let result = 0;
-  const timer = setInterval(() => {
-    result += incrementBy;
-    invocation.setResult(result);
-  }, 1000);
-
-  invocation.onCanceled = () => {
-    clearInterval(timer);
-  };
-}
-
-/**
- * Writes a message to console.log().
- * @customfunction LOG
- * @param {string} message String to write.
- * @returns String to write.
- */
-export function logMessage(message) {
-  console.log(message);
-
-  return message;
+ * @param {string} address The address of the cell from which to retrieve the value.
+ * @returns The value of the cell at the input address.
+ **/
+export async function getRangeNew(address, invocation) {
+  // Retrieve the context object. 
+  const context = invocation.getRequestContext();
+  
+  // Use the context object to access the cell at the input address. 
+  const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+  range.load("values");
+  await context.sync();
+  
+  // Return the value of the cell at the input address.
+  return range.values[0][0];
 }

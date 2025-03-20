@@ -1,0 +1,53 @@
+{
+    "allowCustomDataForDataTypeAny": true,
+    "functions": [
+        {
+            "description": "Add two numbers",
+            "id": "ADD",
+            "name": "ADD",
+            "parameters": [
+                {
+                    "description": "First number",
+                    "name": "first",
+                    "type": "number"
+                },
+                {
+                    "description": "Second number",
+                    "name": "second",
+                    "type": "number"
+                }
+            ],
+            "result": {
+                "type": "number"
+            }
+        },
+        {
+            "id": "GETRANGE",
+            "name": "GETRANGE",
+            "parameters": [
+                {
+                    "description": "The address of the cell from which to retrieve the value.",
+                    "name": "address",
+                    "type": "string"
+                }
+            ],
+            "result": {}
+        },
+        {
+            "id": "GETRANGENEW",
+            "name": "GETRANGENEW",
+            "parameters": [
+                {
+                    "description": "The address of the cell from which to retrieve the value.",
+                    "name": "address",
+                    "type": "string"
+                },
+                {
+                    "name": "invocation",
+                    "type": "any"
+                }
+            ],
+            "result": {}
+        }
+    ]
+}

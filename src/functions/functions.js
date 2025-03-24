@@ -11,15 +11,54 @@ export function add(first, second) {
   return first + second;
 }
 
+/**
+ * @customfunction
+ * @param {string} address The address of the cell from which to retrieve the value.
+ * @returns The value of the cell at the input address.
+ **/
+export async function getRange(address) {
+  // Retrieve the context object. 
+  const context = new Excel.RequestContext()
+  
+  // Use the context object to access the cell at the input address. 
+  const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+  range.load("values");
+  await context.sync();
+  
+  // Return the value of the cell at the input address.
+  return range.values[0][0];
+}
 
 /**
  * @customfunction
  * @param {string} address The address of the cell from which to retrieve the value.
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
- * @requiresAddress 
  * @returns The value of the cell at the input address.
  **/
-export async function getRange(address, invocation) {
+export async function getRange1(address, invocation) {
+  // Retrieve the context object. 
+  const context = invocation.getRequestContext();
+  
+  // Use the context object to access the cell at the input address. 
+  const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+  range.load("values");
+  await context.sync();
+  
+  // Return the value of the cell at the input address.
+  return range.values[0][0];
+}
+
+
+
+
+/**
+ * @customfunction
+ * @param {string} address The address of the cell from which to retrieve the value.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress
+ * @returns The value of the cell at the input address.
+ **/
+export async function getRange2(address, invocation) {
   // Retrieve the context object. 
   const context = invocation.getRequestContext();
   

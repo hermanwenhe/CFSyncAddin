@@ -58,8 +58,8 @@
             "result": {}
         },
         {
-            "id": "GETRANGE3",
-            "name": "GETRANGE3",
+            "id": "GETRANGEEXCELCONTEXT",
+            "name": "GETRANGEEXCELCONTEXT",
             "parameters": [
                 {
                     "description": "The address of the cell from which to retrieve the value.",

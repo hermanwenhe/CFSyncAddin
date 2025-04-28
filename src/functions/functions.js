@@ -39,10 +39,15 @@ export async function getRange1(address, invocation) {
   // New context to execute API calls synchronously.
   const context = invocation.getRequestContext();
   
-  // Use the context object to access the cell at the input address. 
-  const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
-  range.load("values");
-  await context.sync();
+  try {
+    // Use the context object to access the cell at the input address. 
+    const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+    range.load("values");
+    await context.sync();
+  } catch (e) {
+    // Handle the error if the address is invalid or the cell is not found.
+    return `Error: ${e.message}`;
+  }
   
   // Return the value of the cell at the input address.
   return range.values[0][0];
@@ -60,14 +65,19 @@ export async function getRange1(address, invocation) {
 export async function getRange2(address, invocation) {
   // New context to execute API calls synchronously.
   const context = invocation.getRequestContext();
-  
-  // Use the context object to access the cell at the input address. 
-  const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
-  range.load("values");
-  await context.sync();
 
-  range.values[0][0] = "Hello World";
-  await context.sync();
+  try {
+    // Use the context object to access the cell at the input address. 
+    const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+    range.load("values");
+    await context.sync();
+
+    range.values[0][0] = "Hello World";
+    await context.sync();
+  } catch (e) {
+    // Handle the error if the address is invalid or the cell is not found.
+    return `Error: ${e.message}`;
+  }
   
   // Return the value of the cell at the input address.
   return range.values[0][0];
@@ -81,7 +91,7 @@ export async function getRange2(address, invocation) {
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
  * @returns The value of the cell at the input address.
  **/
-export async function getRange3(address, invocation) {
+export async function getRangeExcelContext(address, invocation) {
   // Retrieve the context object. 
   const context = new Excel.RequestContext(invocation);
   

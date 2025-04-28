@@ -48,9 +48,18 @@
         {
             "id": "GETRANGE2",
             "name": "GETRANGE2",
-            "options": {
-                "requiresAddress": true
-            },
+            "parameters": [
+                {
+                    "description": "The address of the cell from which to retrieve the value.",
+                    "name": "address",
+                    "type": "string"
+                }
+            ],
+            "result": {}
+        },
+        {
+            "id": "GETRANGE3",
+            "name": "GETRANGE3",
             "parameters": [
                 {
                     "description": "The address of the cell from which to retrieve the value.",

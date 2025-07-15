@@ -93,7 +93,7 @@ export async function getRange2(address, invocation) {
  **/
 export async function getRangeExcelContext(address, invocation) {
   // Retrieve the context object. 
-  const context = new Excel.RequestContext(invocation);
+  const context = new Excel.RequestContext(undefined, invocation);
   
   // Use the context object to access the cell at the input address. 
   const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);

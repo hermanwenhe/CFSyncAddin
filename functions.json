@@ -60,6 +60,9 @@
         {
             "id": "GETRANGEEXCELCONTEXT",
             "name": "GETRANGEEXCELCONTEXT",
+            "options": {
+                "sync": true
+            },
             "parameters": [
                 {
                     "description": "The address of the cell from which to retrieve the value.",

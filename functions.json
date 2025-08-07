@@ -71,6 +71,21 @@
                 }
             ],
             "result": {}
+        },
+        {
+            "id": "GETRANGEEXCELCONTEXTSET",
+            "name": "GETRANGEEXCELCONTEXTSET",
+            "options": {
+                "sync": true
+            },
+            "parameters": [
+                {
+                    "description": "The address of the cell from which to retrieve the value.",
+                    "name": "address",
+                    "type": "string"
+                }
+            ],
+            "result": {}
         }
     ]
 }

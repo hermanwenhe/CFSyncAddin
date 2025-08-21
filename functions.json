@@ -5,6 +5,9 @@
             "description": "Add two numbers",
             "id": "ADD",
             "name": "ADD",
+            "options": {
+                "supportSync": true
+            },
             "parameters": [
                 {
                     "description": "First number",
@@ -24,6 +27,9 @@
         {
             "id": "GETRANGE",
             "name": "GETRANGE",
+            "options": {
+                "supportSync": true
+            },
             "parameters": [
                 {
                     "description": "The address of the cell from which to retrieve the value.",
@@ -36,6 +42,9 @@
         {
             "id": "GETRANGE1",
             "name": "GETRANGE1",
+            "options": {
+                "supportSync": true
+            },
             "parameters": [
                 {
                     "description": "The address of the cell from which to retrieve the value.",
@@ -48,6 +57,9 @@
         {
             "id": "GETRANGE2",
             "name": "GETRANGE2",
+            "options": {
+                "supportSync": true
+            },
             "parameters": [
                 {
                     "description": "The address of the cell from which to retrieve the value.",
@@ -61,7 +73,7 @@
             "id": "GETRANGEEXCELCONTEXT",
             "name": "GETRANGEEXCELCONTEXT",
             "options": {
-                "sync": true
+                "supportSync": true
             },
             "parameters": [
                 {
@@ -76,7 +88,7 @@
             "id": "GETRANGEEXCELCONTEXTSET",
             "name": "GETRANGEEXCELCONTEXTSET",
             "options": {
-                "sync": true
+                "supportSync": true
             },
             "parameters": [
                 {

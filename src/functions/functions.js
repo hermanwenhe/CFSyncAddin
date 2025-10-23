@@ -21,6 +21,7 @@ export function add(first, second) {
 export async function getRange(address) {
   // Retrieve the context object. 
   const context = new Excel.RequestContext()
+  context.setInvocation(invocation);
   
   // Use the context object to access the cell at the input address. 
   const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
@@ -41,6 +42,7 @@ export async function getRange(address) {
 export async function getRange1(address, invocation) {
   // New context to execute API calls synchronously.
   const context = invocation.getRequestContext();
+  context.setInvocation(invocation);
   
   try {
     // Use the context object to access the cell at the input address. 
@@ -67,7 +69,8 @@ export async function getRange1(address, invocation) {
  **/
 export async function getRange2(address, invocation) {
   // New context to execute API calls synchronously.
-  const context = invocation.getRequestContext();
+  const context = new Excel.RequestContext();
+  context.setInvocation(invocation);
 
   try {
     // Use the context object to access the cell at the input address. 

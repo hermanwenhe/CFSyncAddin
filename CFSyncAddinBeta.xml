@@ -92,7 +92,7 @@
         <bt:Url id="Functions.Script.Url" DefaultValue="https://hermanwenhe.github.io/CFSyncAddin/functions.js"/>
         <bt:Url id="Functions.Metadata.Url" DefaultValue="https://hermanwenhe.github.io/CFSyncAddin/functions.json"/>
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://hermanwenhe.github.io/CFSyncAddin/taskpane.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://hermanwenhe.github.io/CFSyncAddin/taskpane-beta.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="Functions.Namespace" DefaultValue="CFSyncAddin"/>

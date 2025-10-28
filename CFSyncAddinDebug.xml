@@ -2,7 +2,7 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>e43b3ef6-0e02-4ccf-a3a4-59347b6a9122</Id>
   <Version>1.0.0</Version>
-  <ProviderName>Herman</ProviderName>
+  <ProviderName>HermanDebug</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="CFSyncAddinDebug"/>
   <Description DefaultValue="Write your own Excel functions in JavaScript."/>
